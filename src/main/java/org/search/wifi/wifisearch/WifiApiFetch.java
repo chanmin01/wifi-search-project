@@ -10,7 +10,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 
-public class ConnectWifiApi {
+public class WifiApiFetch {
 
     public static ArrayList<WifiData> loadWifiObjectList() throws IOException {
         ArrayList<WifiData> wifiData = new ArrayList<>();

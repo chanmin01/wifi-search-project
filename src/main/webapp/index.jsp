@@ -139,14 +139,14 @@
   <span onclick="window.open('load-wifi.jsp')">Open API 와이파이 정보 가져오기</span>
 </div>
 
-<form action="historyDataInsertQuery.jsp" method="post" target="param" onsubmit="return clickBtn2()" style="float:left;">
+<form action="history-insert.jsp" method="post" target="param" onsubmit="return clickBtn2()" style="float:left;">
   <input type='text' id='lat' name="lat" placeholder='LAT'>
   <input type='text' id='lng' name="lng" placeholder='LNG'>
   <input type='submit' onclick="clickBtn2()" value='내 위치 가져오기'>
 </form>
 
 <form style="float:left; margin-left: 20px;">
-  <input type='button' onclick="location.href='index_wifiLoaded.jsp'" value='근처 WIFI 정보 보기'>
+  <input type='button' onclick="location.href='index-loaded-wifi.jsp'" value='근처 WIFI 정보 보기'>
 </form>
 
 <br style="clear:both;">

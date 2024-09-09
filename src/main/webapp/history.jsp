@@ -78,7 +78,7 @@
     <td><%= uh.getHistY() %></td>
     <td><%= uh.getCol() %></td>
     <td>
-      <form action="historyDataDeleteQuery.jsp" name='delForm' method="post" target="param2" onsubmit="sendData()">
+      <form action="history-delete.jsp" name='delForm' method="post" target="param2" onsubmit="sendData()">
         <input type='text' id='delID' name="delID" style="display: none" value='<%=uh.getId() %>'/>
         <input type='submit' id='del' onclick="window.location.reload()" name="deleteButton" value='삭제'/>
       </form>
@@ -87,7 +87,7 @@
   <% } %>
   </tbody>
 </table>
-<iframe id="iframe" src="historyDataDeleteQuery.jsp" name="param2" style="display:none"></iframe>
+<iframe id="iframe" src="history-delete.jsp" name="param2" style="display:none"></iframe>
 
 </body>
 </html>

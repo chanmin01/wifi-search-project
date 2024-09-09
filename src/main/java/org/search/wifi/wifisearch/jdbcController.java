@@ -7,7 +7,7 @@ import java.util.List;
 
 public class jdbcController {
 
-    public static int createRawTables(ArrayList<ConnectWifiApi.WifiData> dto) throws ClassNotFoundException {
+    public static int createRawTables(ArrayList<WifiApiFetch.WifiData> dto) throws ClassNotFoundException {
         int idx = 0;
         Class.forName("org.sqlite.JDBC");
         try {
@@ -16,7 +16,7 @@ public class jdbcController {
             conn.setAutoCommit(false);
             System.out.println("Opened database successfully");
 
-            for (ConnectWifiApi.WifiData data : dto) {
+            for (WifiApiFetch.WifiData data : dto) {
                 idx++;
                 preparedStatement.setString(1, data.X_SWIFI_MGR_NO);
                 preparedStatement.setString(2, data.X_SWIFI_WRDOFC);
@@ -129,7 +129,7 @@ public class jdbcController {
         System.out.println("reading WifiList");
         List<WifiData> wifiDataList = new ArrayList<>();
         Class.forName("org.sqlite.JDBC");
-        ConnectWifiApi connectWifiApi = new ConnectWifiApi();
+        WifiApiFetch wifiApiFetch = new WifiApiFetch();
 
         try {
             Connection conn = DriverManager.getConnection("jdbc:sqlite:/Users/jeonchanmin/DB/wifi_info.db");
@@ -203,7 +203,7 @@ public class jdbcController {
     public static String getDistanceUpdateQuery() {
         return "UPDATE PUBLIC_WIFI_SEOUL_FOR_ENTIRE SET DISTANCE = " +
                 "(6371*acos(cos(radians(?))*cos(radians(LAT))*cos(radians(LNT)" +
-                "-radians(?))+sin(radians(?))*sin(radians(lat)))) where 1 = 1";
+                "-radians(?))+sin(radians(?))*sin(radians(LAT)))) where 1 = 1";
     }
 
 

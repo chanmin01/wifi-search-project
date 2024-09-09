@@ -1,7 +1,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="org.search.wifi.wifisearch.jdbcController" %>
-<%@ page import="org.search.wifi.wifisearch.ConnectWifiApi" %>
-<%@ page import="static org.search.wifi.wifisearch.ConnectWifiApi.loadWifiObjectList" %>
+<%@ page import="org.search.wifi.wifisearch.WifiApiFetch" %>
+<%@ page import="static org.search.wifi.wifisearch.WifiApiFetch.loadWifiObjectList" %>
 <%@ page import="java.io.IOException" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +12,7 @@
     <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <title>WIFI LOAD</title>
     <%!
-        ArrayList<ConnectWifiApi.WifiData> data;
+        ArrayList<WifiApiFetch.WifiData> data;
 
         {
             try {
